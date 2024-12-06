@@ -1,0 +1,6 @@
+{
+  "subgraph": "Owners",
+  "http": {
+    "baseAddress": "http://localhost:50001/graphql"
+  }
+}
