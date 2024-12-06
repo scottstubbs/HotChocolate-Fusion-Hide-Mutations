@@ -1,8 +1,11 @@
-﻿namespace Owners.Types;
+﻿using HotChocolate.Fusion.SourceSchema.Types;
+
+namespace Owners.Types;
 
 [MutationType]
 public static class Mutation
 {
+    [Internal]
     public static Owner CreateOwner(string name, string email, string? address, string? city, string? state, string? zip, string? phone)
     {
         var owner = new Owner
@@ -20,6 +23,7 @@ public static class Mutation
         return owner;
     }
 
+    [Internal]
     public static Owner UpdateOwner(int id, string? name = null, string? email = null, string? address = null, string? city = null, string? state = null, string? zip = null, string? phone = null)
     {
         var owner = Repository.Owners.FirstOrDefault(o => o.Id == id);
@@ -58,6 +62,7 @@ public static class Mutation
         return owner;
     }
 
+    [Internal]
     public static bool DeleteOwner(int id)
     {
         var owner = Repository.Owners.FirstOrDefault(o => o.Id == id);

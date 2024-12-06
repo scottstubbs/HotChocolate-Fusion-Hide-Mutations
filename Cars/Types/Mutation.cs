@@ -1,8 +1,11 @@
-﻿namespace Cars.Types;
+﻿using HotChocolate.Fusion.SourceSchema.Types;
+
+namespace Cars.Types;
 
 [MutationType]
 public static class Mutation
 {
+    [Internal]
     public static Car CreateCar(string make, string model, int year, string color, int ownerId)
     {
         var car = new Car
@@ -18,6 +21,7 @@ public static class Mutation
         return car;
     }
 
+    [Internal]
     public static Car UpdateCar(int id, string? make = null, string? model = null, int? year = null, string? color = null, int? ownerId = null)
     {
         var car = Repository.Cars.FirstOrDefault(c => c.Id == id);
@@ -48,6 +52,7 @@ public static class Mutation
         return car;
     }
 
+    [Internal]
     public static bool DeleteCar(int id)
     {
         var car = Repository.Cars.FirstOrDefault(c => c.Id == id);

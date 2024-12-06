@@ -13,9 +13,9 @@ type Car {
 }
 
 type Mutation {
-  createCar(make: String! model: String! year: Int! color: String! ownerId: Int!): Car! @cost(weight: "10")
-  updateCar(id: Int! make: String model: String year: Int color: String ownerId: Int): Car! @cost(weight: "10")
-  deleteCar(id: Int!): Boolean! @cost(weight: "10")
+  createCar(make: String! model: String! year: Int! color: String! ownerId: Int!): Car! @internal @cost(weight: "10")
+  updateCar(id: Int! make: String model: String year: Int color: String ownerId: Int): Car! @internal @cost(weight: "10")
+  deleteCar(id: Int!): Boolean! @internal @cost(weight: "10")
 }
 
 type Owner {

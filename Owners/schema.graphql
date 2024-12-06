@@ -4,9 +4,9 @@
 }
 
 type Mutation {
-  createOwner(name: String! email: String! address: String city: String state: String zip: String phone: String): Owner! @cost(weight: "10")
-  updateOwner(id: Int! name: String email: String address: String city: String state: String zip: String phone: String): Owner! @cost(weight: "10")
-  deleteOwner(id: Int!): Boolean! @cost(weight: "10")
+  createOwner(name: String! email: String! address: String city: String state: String zip: String phone: String): Owner! @internal @cost(weight: "10")
+  updateOwner(id: Int! name: String email: String address: String city: String state: String zip: String phone: String): Owner! @internal @cost(weight: "10")
+  deleteOwner(id: Int!): Boolean! @internal @cost(weight: "10")
 }
 
 type Owner {
