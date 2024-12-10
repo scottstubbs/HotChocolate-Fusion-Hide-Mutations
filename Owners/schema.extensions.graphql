@@ -1,0 +1,4 @@
+extend schema
+	@remove(coordinate: "Mutation")
+{
+}
